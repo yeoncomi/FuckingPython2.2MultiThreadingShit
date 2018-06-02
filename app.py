@@ -11,9 +11,8 @@ def f():
         for x in range(0, 100000):
             rand_string = random_char(x)
             return sha256(rand_string)
-if __name__ == 'main':
-    p = Process(target=f)
-    for i in range(0, 100):
-        p.start()
-        print "Thread Started"
-    p.join()
+p = Process(target=f)
+for i in range(0, 100):
+    p.start()
+    print "Thread Started"
+p.join()

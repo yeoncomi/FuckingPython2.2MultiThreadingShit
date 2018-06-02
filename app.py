@@ -5,13 +5,12 @@ import hashlib
 def random_char(y):
     return ''.join(random.choice(string.ascii_letters) for x in range(y))
 def sha256(z):
-    hashlib.sha256(z)
+    return hashlib.sha256(z)
 def f():
-    for x in range(0, 1000):
-        for x in range(0, 1000):
+    for x in range(0, 10000000):
+        for x in range(0, 100000):
             rand_string = random_char(x)
-            sha256(rand_string)
-            print sha256
+            return sha256(rand_string)
 if __name__ == 'main':
     p = Process(target=f)
     for i in range(0, 100):
